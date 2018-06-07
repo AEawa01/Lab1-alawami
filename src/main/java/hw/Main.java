@@ -1,7 +1,31 @@
 package hw;
 
 public class Main {
+  public String[] fizzBuzzArray(final int n){
+    if(n <= 0){
+      return null;
+    }
+    String result[] = new String[n];
+    for (int i =1; i <= n; i++)
+    {
+      if (i % 3 == 0 && i % 5 == 0) {
+        result[i-1] = "fizz buzz";
+      }
+      else if (i % 3 == 0) {
+        result[i-1] = "fizz";
+      }
+      else if (i % 5 ==0) {
+        result[i-1] = "buzz";
+      }
+      else {
+        result[i-1] = String.valueOf(i);
+      }
+    }
+    return result;
+  }
+
   public static void main(final String[] args) {
+    Main main = new Main();
     int max = 0;
     if (args.length > 0) {
       try {
@@ -19,20 +43,10 @@ public class Main {
        */
     }
 
-    for (int i =1; i <= max; i++)
-    {
-      if (i % 3 == 0 && i % 5 == 0) {
-        System.out.println("fizz buzz");
+    String result[] = main.fizzBuzzArray(max);
+    if(result!=null)
+      for(int i = 0;i<result.length;i++){
+        System.out.println(result[i]);
       }
-      else if (i % 3 == 0) {
-        System.out.println("fizz");
-      }
-      else if (i % 5 ==0) {
-        System.out.println("buzz");
-      }
-      else {
-        System.out.println(i);
-      }
-    }
   }
 }

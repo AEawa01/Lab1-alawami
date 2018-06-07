@@ -1,23 +1,19 @@
- //package hw;
+package hw;
 
-//import static org.junit.Assert.;
+import org.junit.Test;
 
-//import org.junit.After;
-//import org.junit.Before;
-//import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-//public class TestFizzBuzz {
+public class TestFizzBuzz {
+  Main main = new Main();
 
-  //private FizzBuzz fixture;
-
-  //@Before
-  //public void setUp() throws Exception {
-    //fixture = new FizzBuzz();
- // }
-
- // @After
- // public void tearDown() throws Exception {
- //   fixture = null;
- // }
-
-//}
+  @Test
+  public void getMessage() {
+    assertEquals(null, main.fizzBuzzArray(-10));
+    assertEquals(null, main.fizzBuzzArray(-1));
+    assertEquals(null, main.fizzBuzzArray(0));
+    assertEquals(new String[]{"1"}, main.fizzBuzzArray(1));
+    assertEquals(new String[]{"1","2","fizz","4","buzz","fizz","7"}, main.fizzBuzzArray(7));
+    assertEquals(new String[]{"1","2","fizz","4","buzz","fizz","7","8","fizz","buzz","11","fizz","13","14","fizz buzz","16","17"}, main.fizzBuzzArray(17));
+  }
+}

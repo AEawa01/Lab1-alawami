@@ -1,13 +1,13 @@
 package hw;
 
 public class Main {
-
   public static void main(final String[] args) {
     int max = 0;
     if (args.length > 0) {
       try {
         max = Integer.parseInt(args[0]);
-      } catch (NumberFormatException e) {
+      }
+      catch (NumberFormatException e) {
         System.err.println("The argument entered must be an integer ");
         //In our case, you can use
         System.exit(1);
@@ -19,12 +19,20 @@ public class Main {
        */
     }
 
-    FizzBuzz main = new FizzBuzz();
-
-    String result[] = main.fizzBuzzArray(max);
-    if (result != null)
-      for (int i = 0; i < result.length; i++) {
-        System.out.println(result[i]);
+    for (int i =1; i <= max; i++)
+    {
+      if (i % 3 == 0 && i % 5 == 0) {
+        System.out.println("fizz buzz");
       }
+      else if (i % 3 == 0) {
+        System.out.println("fizz");
+      }
+      else if (i % 5 ==0) {
+        System.out.println("buzz");
+      }
+      else {
+        System.out.println(i);
+      }
+    }
   }
 }

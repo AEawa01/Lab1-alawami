@@ -1,24 +1,28 @@
 package hw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
-  public String[] fizzBuzzArray(final int n){
+  List<String> fizzBuzzList(final int n) {
+    List<String> result;
     if(n <= 0){
       return null;
     }
-    String result[] = new String[n];
+    result = new ArrayList<>();
     for (int i =1; i <= n; i++)
     {
       if (i % 3 == 0 && i % 5 == 0) {
-        result[i-1] = "fizz buzz";
+        result.add("fizz buzz");
       }
       else if (i % 3 == 0) {
-        result[i-1] = "fizz";
+        result.add("fizz");
       }
       else if (i % 5 ==0) {
-        result[i-1] = "buzz";
+        result.add("buzz");
       }
       else {
-        result[i-1] = String.valueOf(i);
+        result.add(String.valueOf(i));
       }
     }
     return result;
@@ -43,10 +47,11 @@ public class Main {
        */
     }
 
-    String result[] = main.fizzBuzzArray(max);
-    if(result!=null)
-      for(int i = 0;i<result.length;i++){
-        System.out.println(result[i]);
+    List<String> res = main.fizzBuzzList(max);
+    if(res!=null) {
+      for (int j = 0; j < res.size(); j++) {
+        System.out.println(res.get(j));
       }
+    }
   }
 }
